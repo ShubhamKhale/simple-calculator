@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
 </head>
 <body>
     <div class="container">
@@ -15,44 +14,44 @@
             <span>Simple Calculator</span>
         </div>
         <div class="display">
-            <input type="text" id="screen" placeholder="0">
+            <input type="text" id="inputScreen" placeholder="0">
         </div>
         <div class="btns">
             <div class="row">
                 <button id="ce" onclick="backspc()">CE</button>
-                <button onclick="fact()">!</button>
+                <button onclick="findFact()">!</button>
                 <button class="btn">(</button>
                 <button class="btn">)</button>
                 <button class="btn">%</button>
                 <button id="ac" onclick="screen.value = '' ">AC</button>
             </div>
             <div class="row">
-                <button onclick="sin()">sin</button>
-                <button onclick="pi()">π</button>
+                <button onclick="calSin()">sin</button>
+                <button onclick="setPi()">π</button>
                 <button class="btn">7</button>
                 <button class="btn">8</button>
                 <button class="btn">9</button>
                 <button class="btn">÷</button>
             </div>
             <div class="row">
-                <button onclick="cos()">cos</button>
-                <button onclick="log()">log</button>
+                <button onclick="calCos()">cos</button>
+                <button onclick="calLog()">log</button>
                 <button class="btn">4</button>
                 <button class="btn">5</button>
                 <button class="btn">6</button>
                 <button class="btn">x</button>
             </div>
             <div class="row">
-                <button onclick="tan()">tan</button>
-                <button onclick="sqrt()">√</button>
+                <button onclick="calTan()">tan</button>
+                <button onclick="calSqrt()">√</button>
                 <button class="btn">1</button>
                 <button class="btn">2</button>
                 <button class="btn">3</button>
                 <button class="btn">-</button>
             </div>
             <div class="row">
-                <button onclick="e()">e</button>
-                <button onclick="pow()">a <span style="position: relative; bottom: 0.4em; right: 0.1em">2</span></button>
+                <button onclick="setE()">e</button>
+                <button onclick="calPow()">a <span style="position: relative; bottom: 0.4em; right: 0.1em">2</span></button>
                 <button class="btn">0</button>
                 <button class="btn">.</button>
                 <button id="res" onclick="screen.value=eval(screen.value)">=</button>
@@ -62,7 +61,7 @@
     </div>
 </body>
 <script>
-    let screen = document.querySelector('#screen');
+    let screen = document.querySelector('#inputScreen');
     let btn = document.querySelectorAll('.btn');
 
     for (item of btn) {
@@ -79,39 +78,39 @@
         });
     }
 
-    function sin(){
+    function calSin(){
         screen.value = Math.sin(screen.value);
     }
 
-    function cos(){
+    function calCos(){
         screen.value = Math.cos(screen.value);
     }
 
-    function tan(){
+    function calTan(){
         screen.value = Math.tan(screen.value);
     }
 
-    function log(){
+    function calLog(){
         screen.value = Math.log(screen.value);
     }
 
-    function pow(){
+    function calPow(){
         screen.value = Math.pow(screen.value, 2);
     }
 
-    function sqrt(){
+    function calSqrt(){
         screen.value = Math.sqrt(screen.value, 2);
     }
 
-    function pi(){
+    function setPi(){
         screen.value = 3.14159265359;
     }
 
-    function e(){
+    function setE(){
         screen.value = 2.71828182846;
     }
 
-    function fact(){
+    function findFact(){
 
         let i;
         let f = 1;
